@@ -1,0 +1,1624 @@
+Program.Sub.ScreenSU.Start
+Gui.fmMX..Create(BaseForm)
+Gui.fmMX..Caption("Sales History Dashboard Mx")
+Gui.fmMX..Size(9525,9105)
+Gui.fmMX..MinX(0)
+Gui.fmMX..MinY(0)
+Gui.fmMX..Position(0,0)
+Gui.fmMX..BackColor(-2147483633)
+Gui.fmMX..MousePointer(0)
+Gui.fmMX..Event(UnLoad,fmMX_UnLoad)
+Gui.fmMX..AlwaysOnTop(False)
+Gui.fmMX..FontName("Tahoma")
+Gui.fmMX..FontSize(8.25)
+Gui.fmMX..ControlBox(True)
+Gui.fmMX..MaxButton(True)
+Gui.fmMX..MinButton(True)
+Gui.fmMX..Moveable(True)
+Gui.fmMX..Sizeable(True)
+Gui.fmMX..ShowInTaskBar(True)
+Gui.fmMX..TitleBar(True)
+Gui.fmMX.GsGcMX.Create(GsGridControl)
+Gui.fmMX.GsGcMX.Size(9135,7665)
+Gui.fmMX.GsGcMX.Position(150,855)
+Gui.fmMX.GsGcMX.Event(RowCellClick,GsGcMX_RowCellClick)
+Gui.fmMX.GsGcMX.Anchor(15)
+Gui.fmMX.GsGcMX.Enabled(True)
+Gui.fmMX.GsGcMX.Visible(True)
+Gui.fmMX.GsGcMX.Zorder(0)
+Gui.fmMX.GsGcMX.Event(CellValueChanged,GsGcMX_CellValueChanged)
+Gui.fmMX.cmdSv.Create(Button)
+Gui.fmMX.cmdSv.Size(855,375)
+Gui.fmMX.cmdSv.Position(6525,330)
+Gui.fmMX.cmdSv.Caption("Save")
+Gui.fmMX.cmdSv.Event(Click,cmdSv_Click)
+Gui.fmMX.cmdSv.Enabled(True)
+Gui.fmMX.cmdSv.Visible(True)
+Gui.fmMX.cmdSv.Zorder(0)
+Gui.fmMX.cmdSv.FontName("Tahoma")
+Gui.fmMX.cmdSv.FontSize(8.25)
+Gui.fmMX.lblCat.Create(Label,"Category",True,1350,255,0,225,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMX.lblCat.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblCat.BorderStyle(0)
+Gui.fmMX.lblPL.Create(Label,"Product Line",True,1035,255,0,2040,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMX.lblPL.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblPL.BorderStyle(0)
+Gui.fmMX.txtPL.Create(TextBox,"",True,945,300,0,2040,375,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtPL.MaxLength(2)
+Gui.fmMX.cboCat.Create(ComboBox)
+Gui.fmMX.cboCat.Size(1740,330)
+Gui.fmMX.cboCat.Position(225,345)
+Gui.fmMX.cboCat.Enabled(True)
+Gui.fmMX.cboCat.Visible(True)
+Gui.fmMX.cboCat.Zorder(0)
+Gui.fmMX.cboCat.FontName("Tahoma")
+Gui.fmMX.cboCat.FontSize(8.25)
+Gui.fmMX.cmdDel.Create(Button)
+Gui.fmMX.cmdDel.Size(855,375)
+Gui.fmMX.cmdDel.Position(7485,330)
+Gui.fmMX.cmdDel.Caption("Delete")
+Gui.fmMX.cmdDel.Event(Click,cmdDel_Click)
+Gui.fmMX.cmdDel.Enabled(True)
+Gui.fmMX.cmdDel.Visible(True)
+Gui.fmMX.cmdDel.Zorder(0)
+Gui.fmMX.cmdDel.FontName("Tahoma")
+Gui.fmMX.cmdDel.FontSize(8.25)
+Gui.fmMX.lbl1.Create(Label,"Color",True,795,255,0,3570,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMX.lbl1.FontStyle(True,False,False,False,False)
+Gui.fmMX.lbl1.BorderStyle(0)
+Gui.fmMX.txtColor.Create(TextBox,"",True,2220,300,0,3570,375,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtColor.MaxLength(50)
+Gui.fmMX.cmdBrowseColor.Create(Button)
+Gui.fmMX.cmdBrowseColor.Size(510,375)
+Gui.fmMX.cmdBrowseColor.Position(5835,330)
+Gui.fmMX.cmdBrowseColor.Caption("^")
+Gui.fmMX.cmdBrowseColor.Event(Click,cmdBrowseColor_Click)
+Gui.fmMX.cmdBrowseColor.Enabled(True)
+Gui.fmMX.cmdBrowseColor.Visible(True)
+Gui.fmMX.cmdBrowseColor.Zorder(0)
+Gui.fmMX.cmdBrowseColor.FontName("Tahoma")
+Gui.fmMX.cmdBrowseColor.FontSize(8.25)
+Gui.fmMX.cmdBrowsePL.Create(Button)
+Gui.fmMX.cmdBrowsePL.Size(435,375)
+Gui.fmMX.cmdBrowsePL.Position(3060,330)
+Gui.fmMX.cmdBrowsePL.Caption("^")
+Gui.fmMX.cmdBrowsePL.Event(Click,cmdBrowsePL_Click)
+Gui.fmMX.cmdBrowsePL.Enabled(True)
+Gui.fmMX.cmdBrowsePL.Visible(True)
+Gui.fmMX.cmdBrowsePL.Zorder(0)
+Gui.fmMX.cmdBrowsePL.FontName("Tahoma")
+Gui.fmMX.cmdBrowsePL.FontSize(8.25)
+Gui.fmMX.cmdRefresh.Create(Button)
+Gui.fmMX.cmdRefresh.Enabled(True)
+Gui.fmMX.cmdRefresh.Visible(True)
+Gui.fmMX.cmdRefresh.Zorder(0)
+Gui.fmMX.cmdRefresh.Size(855,375)
+Gui.fmMX.cmdRefresh.Position(8460,330)
+Gui.fmMX.cmdRefresh.Caption("Refresh")
+Gui.fmMX.cmdRefresh.FontName("Tahoma")
+Gui.fmMX.cmdRefresh.FontSize(8.25)
+Gui.fmMX.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.fmMain..Create(BaseForm)
+Gui.fmMain..Caption("Sales History by PL Group")
+Gui.fmMain..Size(23580,14055)
+Gui.fmMain..MinX(0)
+Gui.fmMain..MinY(0)
+Gui.fmMain..Position(0,0)
+Gui.fmMain..BackColor(-2147483633)
+Gui.fmMain..MousePointer(0)
+Gui.fmMain..Event(UnLoad,fmMain_UnLoad)
+Gui.fmMain..AlwaysOnTop(False)
+Gui.fmMain..FontName("Tahoma")
+Gui.fmMain..FontSize(8.25)
+Gui.fmMain..ControlBox(True)
+Gui.fmMain..MaxButton(True)
+Gui.fmMain..MinButton(True)
+Gui.fmMain..Moveable(True)
+Gui.fmMain..Sizeable(True)
+Gui.fmMain..ShowInTaskBar(True)
+Gui.fmMain..TitleBar(True)
+Gui.fmMain.tabMain.Create(Tab)
+Gui.fmMain.tabMain.Size(23295,12615)
+Gui.fmMain.tabMain.Position(60,810)
+Gui.fmMain.tabMain.Event(Click,tabMain_Click)
+Gui.fmMain.tabMain.Anchor(15)
+Gui.fmMain.tabMain.Enabled(True)
+Gui.fmMain.tabMain.Visible(True)
+Gui.fmMain.tabMain.Zorder(0)
+Gui.fmMain.tabMain.FontName("Tahoma")
+Gui.fmMain.tabMain.FontSize(8.25)
+Gui.fmMain.tabMain.Tabs(2)
+Gui.fmMain.tabMain.SetTab(0)
+Gui.fmMain.tabMain.Caption("Sales History")
+Gui.fmMain.tabMain.SetTab(1)
+Gui.fmMain.tabMain.Caption("Early Buy")
+Gui.fmMain.GsGcSAHist.Create(GsGridControl)
+Gui.fmMain.GsGcSAHist.Size(23205,12255)
+Gui.fmMain.GsGcSAHist.Position(0,0)
+Gui.fmMain.GsGcSAHist.Parent("tabMain",0)
+Gui.fmMain.GsGcSAHist.Anchor(15)
+Gui.fmMain.GsGcSAHist.Enabled(True)
+Gui.fmMain.GsGcSAHist.Visible(True)
+Gui.fmMain.GsGcSAHist.Zorder(0)
+Gui.fmMain.GsGcEarly.Create(GsGridControl)
+Gui.fmMain.GsGcEarly.Size(23205,12255)
+Gui.fmMain.GsGcEarly.Position(0,0)
+Gui.fmMain.GsGcEarly.Parent("tabMain",1)
+Gui.fmMain.GsGcEarly.Anchor(15)
+Gui.fmMain.GsGcEarly.Enabled(True)
+Gui.fmMain.GsGcEarly.Visible(True)
+Gui.fmMain.GsGcEarly.Zorder(0)
+Gui.fmMain.lblSAGetData.Create(Label,"Please wait, gathering data",False,6615,1560,0,7140,5505,True,0,"Arial",24,16777215,0,0)
+Gui.fmMain.lblSAGetData.Parent("tabMain",0)
+Gui.fmMain.lblSAGetData.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblSAGetData.BorderStyle(0)
+Gui.fmMain.cboMM.Create(ComboBox)
+Gui.fmMain.cboMM.Size(1995,330)
+Gui.fmMain.cboMM.Position(60,375)
+Gui.fmMain.cboMM.Enabled(True)
+Gui.fmMain.cboMM.Visible(True)
+Gui.fmMain.cboMM.Zorder(0)
+Gui.fmMain.cboMM.FontName("Tahoma")
+Gui.fmMain.cboMM.FontSize(8.25)
+Gui.fmMain.lblMM.Create(Label,"Month",True,1935,255,0,60,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblMM.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblMM.BorderStyle(0)
+Gui.fmMain.chkSelect.Create(CheckBox)
+Gui.fmMain.chkSelect.Size(2100,300)
+Gui.fmMain.chkSelect.Position(3645,240)
+Gui.fmMain.chkSelect.Caption("Select to view by calendar year-to-date")
+Gui.fmMain.chkSelect.Event(Click,chkSelect_Click)
+Gui.fmMain.chkSelect.Enabled(True)
+Gui.fmMain.chkSelect.Visible(True)
+Gui.fmMain.chkSelect.Zorder(0)
+Gui.fmMain.chkSelect.FontName("Tahoma")
+Gui.fmMain.chkSelect.FontSize(8.25)
+Gui.fmMain.frmDates.Create(Frame)
+Gui.fmMain.frmDates.Size(8265,810)
+Gui.fmMain.frmDates.Position(5655,-30)
+Gui.fmMain.frmDates.Enabled(True)
+Gui.fmMain.frmDates.Visible(True)
+Gui.fmMain.frmDates.Zorder(0)
+Gui.fmMain.frmDates.Caption("")
+Gui.fmMain.frmDates.FontName("Tahoma")
+Gui.fmMain.frmDates.FontSize(8.25)
+Gui.fmMain.lblPrevEndDt.Create(Label,"Previous End Date",True,1365,255,0,6855,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblPrevEndDt.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblPrevEndDt.Parent("frmDates")
+Gui.fmMain.lblPrevEndDt.BorderStyle(0)
+Gui.fmMain.lblTo2.Create(Label,"To:",True,450,255,0,6360,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblTo2.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblTo2.Parent("frmDates")
+Gui.fmMain.lblTo2.BorderStyle(0)
+Gui.fmMain.lblPrevDt.Create(Label,"Prev Start Date",True,1365,255,0,4980,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblPrevDt.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblPrevDt.Parent("frmDates")
+Gui.fmMain.lblPrevDt.BorderStyle(0)
+Gui.fmMain.lblFrom2.Create(Label,"From:",True,675,255,0,4305,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblFrom2.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblFrom2.Parent("frmDates")
+Gui.fmMain.lblFrom2.BorderStyle(0)
+Gui.fmMain.lblComp.Create(Label,"Comparing to",True,4110,255,0,4305,150,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblComp.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblComp.Parent("frmDates")
+Gui.fmMain.lblComp.BorderStyle(0)
+Gui.fmMain.lblMsg.Create(Label,"Showing data",True,4050,255,0,150,150,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblMsg.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblMsg.Parent("frmDates")
+Gui.fmMain.lblMsg.BorderStyle(0)
+Gui.fmMain.lblFrom.Create(Label,"From:",True,675,255,0,150,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblFrom.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblFrom.Parent("frmDates")
+Gui.fmMain.lblFrom.BorderStyle(0)
+Gui.fmMain.lblBegDt.Create(Label,"Beginning Date",True,1365,255,0,840,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblBegDt.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblBegDt.Parent("frmDates")
+Gui.fmMain.lblBegDt.BorderStyle(0)
+Gui.fmMain.lblTo.Create(Label,"To:",True,450,255,0,2235,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblTo.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblTo.Parent("frmDates")
+Gui.fmMain.lblTo.BorderStyle(0)
+Gui.fmMain.lblEndDt.Create(Label,"End Date",True,1365,255,0,2670,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEndDt.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEndDt.Parent("frmDates")
+Gui.fmMain.lblEndDt.BorderStyle(0)
+Gui.fmMain.picGSSLogo.Create(PictureBox)
+Gui.fmMain.picGSSLogo.Size(4020,960)
+Gui.fmMain.picGSSLogo.Position(19335,30)
+Gui.fmMain.picGSSLogo.Enabled(True)
+Gui.fmMain.picGSSLogo.Visible(True)
+Gui.fmMain.picGSSLogo.Zorder(0)
+Gui.fmMain.frmEB.Create(Frame)
+Gui.fmMain.frmEB.Size(8265,810)
+Gui.fmMain.frmEB.Position(5655,-30)
+Gui.fmMain.frmEB.Enabled(True)
+Gui.fmMain.frmEB.Visible(True)
+Gui.fmMain.frmEB.Zorder(0)
+Gui.fmMain.frmEB.Caption("")
+Gui.fmMain.frmEB.FontName("Tahoma")
+Gui.fmMain.frmEB.FontSize(8.25)
+Gui.fmMain.lblEBTo.Create(Label,"To:",True,540,255,0,2340,435,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBTo.Parent("frmEB")
+Gui.fmMain.lblEBTo.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBTo.BorderStyle(0)
+Gui.fmMain.lblEBEndDt.Create(Label,"End Date",True,1935,255,0,2910,435,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBEndDt.Parent("frmEB")
+Gui.fmMain.lblEBEndDt.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBEndDt.BorderStyle(0)
+Gui.fmMain.lblEBStrtDt.Create(Label,"Beginning Date",True,1470,255,0,855,435,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBStrtDt.Parent("frmEB")
+Gui.fmMain.lblEBStrtDt.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBStrtDt.BorderStyle(0)
+Gui.fmMain.lblEBFrom.Create(Label,"From:",True,645,255,0,150,435,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBFrom.Parent("frmEB")
+Gui.fmMain.lblEBFrom.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBFrom.BorderStyle(0)
+Gui.fmMain.lblEBMsg.Create(Label,"Showing Data",True,1935,255,0,150,150,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBMsg.Parent("frmEB")
+Gui.fmMain.lblEBMsg.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBMsg.BorderStyle(0)
+Gui.fmMain.lblEBComp.Create(Label,"Comparing to",True,4110,255,0,4305,150,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBComp.Parent("frmEB")
+Gui.fmMain.lblEBComp.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBComp.BorderStyle(0)
+Gui.fmMain.lblEBPrevStrtDt.Create(Label,"Prev Start Date",True,1365,255,0,4980,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBPrevStrtDt.Parent("frmEB")
+Gui.fmMain.lblEBPrevStrtDt.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBPrevStrtDt.BorderStyle(0)
+Gui.fmMain.lblEBPrevEndDt.Create(Label,"Prev End Date",True,1365,255,0,6855,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBPrevEndDt.Parent("frmEB")
+Gui.fmMain.lblEBPrevEndDt.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBPrevEndDt.BorderStyle(0)
+Gui.fmMain.lblEBPrevFrom.Create(Label,"From:",True,675,255,0,4305,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBPrevFrom.Parent("frmEB")
+Gui.fmMain.lblEBPrevFrom.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBPrevFrom.BorderStyle(0)
+Gui.fmMain.lblEBPreTo.Create(Label,"To:",True,450,255,0,6360,450,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblEBPreTo.Parent("frmEB")
+Gui.fmMain.lblEBPreTo.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblEBPreTo.BorderStyle(0)
+Gui.fmMain.cboYY.Create(ComboBox)
+Gui.fmMain.cboYY.Size(1095,330)
+Gui.fmMain.cboYY.Position(2295,375)
+Gui.fmMain.cboYY.Enabled(True)
+Gui.fmMain.cboYY.Visible(True)
+Gui.fmMain.cboYY.Zorder(0)
+Gui.fmMain.cboYY.FontName("Tahoma")
+Gui.fmMain.cboYY.FontSize(8.25)
+Gui.fmMain.lblYY.Create(Label,"Year",True,1935,255,0,2295,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.fmMain.lblYY.FontStyle(True,False,False,False,False)
+Gui.fmMain.lblYY.BorderStyle(0)
+Gui.fmMain.chkYrEnd.Create(CheckBox)
+Gui.fmMain.chkYrEnd.Size(2100,300)
+Gui.fmMain.chkYrEnd.Position(16350,240)
+Gui.fmMain.chkYrEnd.Caption("Select to View Year-End Data")
+Gui.fmMain.chkYrEnd.Event(Click,chkSelect_Click)
+Gui.fmMain.chkYrEnd.Enabled(True)
+Gui.fmMain.chkYrEnd.Visible(True)
+Gui.fmMain.chkYrEnd.Zorder(0)
+Gui.fmMain.chkYrEnd.FontName("Tahoma")
+Gui.fmMain.chkYrEnd.FontSize(8.25)
+Gui.fmMain.chkMonthEnd.Create(CheckBox)
+Gui.fmMain.chkMonthEnd.Size(2100,300)
+Gui.fmMain.chkMonthEnd.Position(14220,240)
+Gui.fmMain.chkMonthEnd.Caption("Select to View Month-End Data")
+Gui.fmMain.chkMonthEnd.Event(Click,chkSelect_Click)
+Gui.fmMain.chkMonthEnd.Enabled(True)
+Gui.fmMain.chkMonthEnd.Visible(True)
+Gui.fmMain.chkMonthEnd.Zorder(0)
+Gui.fmMain.chkMonthEnd.FontName("Tahoma")
+Gui.fmMain.chkMonthEnd.FontSize(8.25)
+Gui.StdColor..Create(BaseForm)
+Gui.StdColor..Caption("Color")
+Gui.StdColor..Size(4050,10695)
+Gui.StdColor..MinX(0)
+Gui.StdColor..MinY(0)
+Gui.StdColor..Position(0,0)
+Gui.StdColor..BackColor(-2147483633)
+Gui.StdColor..MousePointer(0)
+Gui.StdColor..Event(UnLoad,StdColor_UnLoad)
+Gui.StdColor..AlwaysOnTop(False)
+Gui.StdColor..FontName("Tahoma")
+Gui.StdColor..FontSize(8.25)
+Gui.StdColor..ControlBox(True)
+Gui.StdColor..MaxButton(True)
+Gui.StdColor..MinButton(True)
+Gui.StdColor..Moveable(True)
+Gui.StdColor..Sizeable(True)
+Gui.StdColor..ShowInTaskBar(True)
+Gui.StdColor..TitleBar(True)
+Gui.StdColor.lbl1.Create(Label,"Click to select a color",True,1935,255,0,120,180,True,0,"Arial",8,-2147483633,0,0)
+Gui.StdColor.lbl1.BorderStyle(0)
+Gui.StdColor.gsColor.Create(GsGridControl)
+Gui.StdColor.gsColor.Size(3525,9540)
+Gui.StdColor.gsColor.Position(150,480)
+Gui.StdColor.gsColor.Anchor(15)
+Gui.StdColor.gsColor.Event(RowCellClick,gsColor_RowCellClick)
+Gui.StdColor.gsColor.Enabled(True)
+Gui.StdColor.gsColor.Visible(True)
+Gui.StdColor.gsColor.Zorder(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sColorNeedWhiteFont.Declare
+v.Global.sColorNeedWhiteFont.Set("*!*Blue*!*BlueViolet*!*Brown*!*CadetBlue*!*CornflowerBlue*!*DarkCyan*!*DarkGreen*!*DarkMagenta*!*DarkOliveGreen*!*DarkRed*!*DarkSlateBlue*!*DarkSlateGray*!*DarkViolet*!*DeepPink*!*DimGray*!*DodgerBlue*!*FireBrick*!*ForestGreen*!*Gray*!*Green*!*Indigo*!*LightSlateGray*!*Maroon*!*MediumPurple*!*MediumSlateBlue*!*Purple*!*SaddleBrown*!*RoyalBlue*!*Sienna*!*SlateBlue*!*SlateGray*!*SteelBlue*!*Teal*!*DarkGray*!*Crimson*!*DarkGoldenRod*!*DarkOrchid*!*MediumVioletRed*!*Olive*!*Red*!*Chocolate*!*DeepSkyBlue*!*")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'TJS, September 2020
+'Customer:  Cardinal Systems, Inc.
+'BUSINESS CASE: The customer requires a dashboard that provides gross sales summarized by product line group and by the designated time period.
+'BN, July 2022
+'Add column color, color browser, order_no for block order, removed hardcodes, pull dynamically.
+F.Intrinsic.Control.Try
+
+	f.Intrinsic.Control.CallSub(CheckTable)
+	F.Intrinsic.Control.CallSub(SetAnchors)
+	F.Intrinsic.Control.CallSub(SetIcon)
+	F.Intrinsic.Control.CallSub(SetContextMenu)
+	
+	F.Intrinsic.Control.SelectCase(V.Caller.Switches)
+		F.Intrinsic.Control.Case("MX")			
+			f.Intrinsic.Control.CallSub(Load_StdColor)
+			F.Intrinsic.Control.CallSub(MX)
+		F.Intrinsic.Control.Case("DB")
+			Gui.fmMain.tabMain.SetTab(0)
+			Gui.fmMain.lblMM.Visible(True)
+			Gui.fmMain.cboMM.Visible(True)
+			Gui.fmMain.chkSelect.Visible(True)
+			Gui.fmMain.frmDates.Visible(True)
+			Gui.fmMain.frmEB.Visible(False)
+			F.Intrinsic.Control.CallSub(DataBuild)
+			F.Intrinsic.Control.CallSub(EBData)
+			Gui.fmMain..Show
+		F.Intrinsic.Control.CaseElse
+			f.Intrinsic.Control.CallSub(Unload)
+	F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Error.Start
+V.Local.sError.Declare
+V.Local.iRet.Declare
+V.Local.sSep.Declare
+
+F.Intrinsic.String.Build("-------------------------------------------------------------------------------------",,V.Local.sSep)
+F.Intrinsic.String.Build("({5}-{6}){0}{7}{0}Project: {4}{0}{7}{0}Sub: {1}{0}Error: {2}, {3}", V.Ambient.NewLine, V.Args.SubRoutine, V.Args.eNumber, V.Args.eDescription,V.Caller.ScriptFile,V.Ambient.Date, V.Ambient.Time,V.Local.sSep,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError,"Error",V.Local.iRet)
+f.Intrinsic.Control.CallSub(Unload)
+Program.Sub.Error.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try	
+
+	f.Intrinsic.Control.If(v.ODBC.conx.Exists)
+		F.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Control.If(v.ODBC.conts.Exists)
+		F.ODBC.Connection!conts.Close
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.End 
+	
+f.Intrinsic.Control.Catch
+	F.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry	
+Program.Sub.Unload.End
+
+Program.Sub.fmMX_UnLoad.Start
+f.Intrinsic.Control.CallSub(Unload)
+Program.Sub.fmMX_UnLoad.End
+
+Program.Sub.fmMain_UnLoad.Start
+f.Intrinsic.Control.CallSub(Unload)
+Program.Sub.fmMain_UnLoad.End
+
+Program.Sub.CheckTable.Start
+F.Intrinsic.Control.Try
+	V.Local.bRet.Declare
+	v.Local.sRet.Declare
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	F.ODBC.Connection!conx.TableExists("GCG_6063_PL_CAT",v.Local.bRet)
+	F.Intrinsic.Control.If(v.Local.bRet.Not)
+		F.ODBC.Connection!conx.Execute("CREATE TABLE GCG_6063_PL_CAT( CATEGORY CHAR(20), PRODUCT_LINE CHAR(2) NOT NULL,Color Varchar(50),Order_No Double Default '0' )")
+	f.Intrinsic.Control.Else
+		'Check if there is column Color
+		f.ODBC.Connection!conx.ExecuteAndReturn("Select F1.XE$Name As FieldName FROM X$File INNER JOIN X$Field F1 On F1.XE$File = XF$ID  WHERE F1.XE$Name Not Like 'NN_%' And  F1.XE$DataType <> 255 and Xf$Name = 'GCG_6063_PL_CAT' AND RTRIM(UPPER(F1.XE$Name)) = 'COLOR'",v.Local.sRet)
+		f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+			f.ODBC.Connection!conx.Execute("ALTER TABLE GCG_6063_PL_CAT add Color Varchar(50)")
+		f.Intrinsic.Control.EndIf
+		
+		'Check if there is column Order_No
+		f.ODBC.Connection!conx.ExecuteAndReturn("Select F1.XE$Name As FieldName FROM X$File INNER JOIN X$Field F1 On F1.XE$File = XF$ID  WHERE F1.XE$Name Not Like 'NN_%' And  F1.XE$DataType <> 255 and Xf$Name = 'GCG_6063_PL_CAT' AND RTRIM(UPPER(F1.XE$Name)) = 'ORDER_NO'",v.Local.sRet)
+		f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+			f.ODBC.Connection!conx.Execute("ALTER TABLE GCG_6063_PL_CAT add ORDER_NO Double Default '0'")
+		f.Intrinsic.Control.EndIf		
+		
+	F.Intrinsic.Control.EndIf	
+	f.ODBC.Connection!conx.Close
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckTable.End
+
+Program.Sub.SetAnchors.Start
+F.Intrinsic.Control.Try
+
+	Gui.fmMain.tabMain.Anchor(15)
+	Gui.fmMain.GsGcSAHist.Anchor(15)
+	Gui.fmMain.GsGcEarly.Anchor(15)
+	Gui.fmMain.picGSSLogo.Anchor(9)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetAnchors.End
+
+Program.Sub.SetIcon.Start
+F.Intrinsic.Control.Try
+	V.Local.sForm.Declare
+	V.Local.bExists.Declare
+	V.Local.sIcon.Declare
+	V.Local.iCounter.Declare
+	V.Local.sGssLogo.Declare
+	
+	F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+	F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists.Not)
+	    F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+	    F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+	    F.Intrinsic.Control.If(V.Local.bExists.Not)
+	        F.Intrinsic.Control.ExitSub
+	    F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("{0}\ART\GAB_GSS_Logo_Green_Dash.png",V.Caller.GlobalDir,V.Local.sGssLogo)
+	F.Intrinsic.File.Exists(V.Local.sGssLogo, V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists.Not)
+	    F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sGssLogo)
+	    F.Intrinsic.File.Exists(V.Local.sGssLogo, V.Local.bExists)
+	    F.Intrinsic.Control.If(V.Local.bExists.Not)
+	        F.Intrinsic.Control.ExitSub
+	    F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	Gui.fmMain.picGSSLogo.Picture(V.Local.sGssLogo)
+	
+	F.Intrinsic.UI.GetFormList(V.Local.sForm)
+	F.Intrinsic.String.Split(V.Local.sForm, "*!*", V.Local.sForm)
+	
+	F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sForm.UBound, 1)
+	    Gui.[V.Local.sForm(V.Local.iCounter)]..Icon(V.Local.sIcon)
+	F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetIcon.End
+
+Program.Sub.SetContextMenu.Start
+F.Intrinsic.Control.Try
+
+	Gui.fmMain..ContextMenuCreate("ctx_SAHist")
+	Gui.fmMain.GsGcSAHist.ContextMenuAttach("ctx_SAHist")
+	Gui.fmMain..ContextMenuAddItem("ctx_SAHist","Export to Excel",0,"Export to Excel")
+	Gui.fmMain..ContextMenuAddItem("ctx_SAHist","Refresh",0,"Refresh")
+	Gui.fmMain..ContextMenuSetItemEventHandler("ctx_SAHist","Export to Excel","Export")
+	Gui.fmMain..ContextMenuSetItemEventHandler("ctx_SAHist","Refresh","cmdRfrsh_Click")
+	
+	Gui.fmMain..ContextMenuCreate("ctx_EB")
+	Gui.fmMain.GsGcEarly.ContextMenuAttach("ctx_EB")
+	Gui.fmMain..ContextMenuAddItem("ctx_EB","Export to Excel",0,"Export to Excel")
+	Gui.fmMain..ContextMenuAddItem("ctx_EB","Refresh",0,"Refresh")
+	Gui.fmMain..ContextMenuSetItemEventHandler("ctx_EB","Export to Excel","Export")
+	Gui.fmMain..ContextMenuSetItemEventHandler("ctx_EB","Refresh","cmdRfrsh_Click")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenu.End
+
+Program.Sub.cmdRefresh_Click.Start
+f.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.CallSub(MX)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.DataBuild.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare
+	V.Local.sSteel.Declare
+	V.Local.sCoping.Declare
+	V.Local.sExtrusion.Declare
+	V.Local.sThermo.Declare
+	V.Local.sPolymer.Declare
+	V.Local.sForms.Declare
+	V.Local.sHydroblox.Declare
+	V.Local.sCurDate.Declare
+	V.Local.sCurBegDate.Declare
+	V.Local.sCurEndDate.Declare
+	V.Local.sCurDD.Declare
+	V.Local.sCurMM.Declare
+	V.Local.sCurYY.Declare
+	V.Local.sPrevYY.Declare
+	V.Local.sPrevDate.Declare
+	V.Local.sPrevBegDate.Declare
+	V.Local.sPrevEndDate.Declare
+	V.Local.sYY.Declare
+	V.Local.iCnt.Declare
+	V.Local.i.Declare
+	v.Local.sCategory.Declare
+	v.Local.sPLList.Declare
+	v.Local.sFilter.Declare
+	v.Local.sDivCol.Declare
+	v.Local.sCurCol.Declare
+	v.Local.sPrevCol.Declare
+	v.Local.sChgCol.Declare
+	v.Local.sPctCol.Declare
+	v.Local.sExp.Declare
+	v.Local.sDictName.Declare
+	
+	'Gui.fmMain.GsGcSAHist.Visible(False)
+	Gui.fmMain.lblSAGetData.Visible(True)
+	
+	Gui.fmMain.cboMM.ClearItems
+	
+	Gui.fmMain.cboMM.AddItem("JANUARY")
+	Gui.fmMain.cboMM.AddItem("FEBRUARY")
+	Gui.fmMain.cboMM.AddItem("MARCH")
+	Gui.fmMain.cboMM.AddItem("APRIL")
+	Gui.fmMain.cboMM.AddItem("MAY")
+	Gui.fmMain.cboMM.AddItem("JUNE")
+	Gui.fmMain.cboMM.AddItem("JULY")
+	Gui.fmMain.cboMM.AddItem("AUGUST")
+	Gui.fmMain.cboMM.AddItem("SEPTEMBER")
+	Gui.fmMain.cboMM.AddItem("OCTOBER")
+	Gui.fmMain.cboMM.AddItem("NOVEMBER")
+	Gui.fmMain.cboMM.AddItem("DECEMBER")
+	
+	V.Local.sCurDate.Set(V.Ambient.Date.PervasiveDate)
+	F.Intrinsic.String.Format(V.Local.sCurDate,"YYYY",V.Local.sCurYY)
+	
+	F.Intrinsic.Math.Add(V.Local.sCurYY,1,V.Local.sYY)
+	
+	Gui.fmMain.cboYY.ClearItems
+	
+	F.Intrinsic.Control.For(V.Local.iCnt,0,5,1)
+		F.Intrinsic.Math.Sub(V.Local.sYY,1,V.Local.sYY)
+		Gui.fmMain.cboYY.AddItem(V.Local.sYY)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	F.Intrinsic.Control.If(V.Screen.fmMain!cboYY.Value.Trim,=,"")
+		Gui.fmMain.cboYY.Text(V.Local.sCurYY)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!conts.OpenCompanyConnection
+	'Year-end.  Displays all data for a calendar year
+	F.Intrinsic.Control.If(V.Screen.fmMain!chkYrEnd.CheckedAsBoolean)
+	
+		V.Local.sCurYY.Set(V.Screen.fmMain!cboYY.Value)
+	
+		F.Intrinsic.String.Build("01/01/{0}",V.Local.sCurYY,V.Local.sCurBegDate)
+		F.Intrinsic.String.Build("12/31/{0}",V.Local.sCurYY,V.Local.sCurEndDate)
+		
+		F.Intrinsic.Math.Sub(V.Local.sCurYY,1,V.Local.sPrevYY)
+		
+		F.Intrinsic.String.Build("01/01/{0}",V.Local.sPrevYY,V.Local.sPrevBegDate)
+		F.Intrinsic.String.Build("12/31/{0}",V.Local.sPrevYY,V.Local.sPrevEndDate)
+	
+	
+		Gui.fmMain.lblBegDt.Caption(V.Local.sCurBegDate)
+		Gui.fmMain.lblEndDt.Caption(V.Local.sCurEndDate)
+		
+		Gui.fmMain.lblPrevDt.Caption(V.Local.sPrevBegDate)
+		Gui.fmMain.lblPrevEndDt.Caption(V.Local.sPrevEndDate)
+		
+		Gui.fmMain.cboMM.Text("")
+		Gui.fmMain.chkSelect.Value(False)
+	
+	F.Intrinsic.Control.Else
+	'Year-to-date.  Displays all data from January 1st through the date the dashboard was opened
+		F.Intrinsic.Control.If(V.Screen.fmMain!chkSelect.CheckedAsBoolean)
+			F.Intrinsic.String.Format(V.Local.sCurDate,"DD",V.Local.sCurDD)
+			F.Intrinsic.String.Format(V.Local.sCurDate,"MM",V.Local.sCurMM)
+			F.Intrinsic.String.Build("01/01/{0}",V.Local.sCurYY,V.Local.sCurBegDate)
+			F.Intrinsic.String.Build("{0}/{1}/{2}",V.Local.sCurMM,V.Local.sCurDD,V.Local.sCurYY,V.Local.sCurEndDate)
+		
+			F.Intrinsic.Math.Sub(V.Local.sCurYY,1,V.Local.sPrevYY)
+			F.Intrinsic.String.Build("{0}-{1}-{2}",V.Local.sPrevYY,V.Local.sCurMM,V.Local.sCurDD,V.Local.sPrevDate)
+			F.Intrinsic.String.Build("Select BEG_DATE,END_DATE from V_GL_CALENDAR where START_YEAR = '{0}' and PERIOD = '{1}'",V.Local.sPrevYY.Trim,V.Local.sCurMM.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+			F.Intrinsic.String.Split(V.Local.sSQL,"*!*",V.Local.sSQL)
+			V.Local.sPrevEndDate.Set(V.Local.sSQL(1))
+			
+			F.Intrinsic.Control.If(V.Local.sPrevDate,>,V.Local.sPrevEndDate.PervasiveDate)
+				F.Intrinsic.Math.Sub(V.Local.sCurDD,1,V.Local.sCurDD)
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.String.Build("{0}/{1}/{2}",V.Local.sCurMM,V.Local.sCurDD,V.Local.sPrevYY,V.Local.sPrevEndDate)
+			
+			F.Intrinsic.String.Build("01/01/{0}",V.Local.sPrevYY,V.Local.sPrevBegDate)
+			
+			Gui.fmMain.lblBegDt.Caption(V.Local.sCurBegDate)
+			Gui.fmMain.lblEndDt.Caption(V.Local.sCurEndDate)
+			
+			Gui.fmMain.lblPrevDt.Caption(V.Local.sPrevBegDate)
+			Gui.fmMain.lblPrevEndDt.Caption(V.Local.sPrevEndDate)
+			
+			Gui.fmMain.cboMM.Text("")
+			Gui.fmMain.cboYY.Text("")
+		F.Intrinsic.Control.Else
+			'By Month.  Displays all data for the month and year selected
+			F.Intrinsic.Control.If(V.Screen.fmMain!cboMM.Text.Trim,=,"")
+				V.Local.sCurDate.Set(V.Ambient.Date.PervasiveDate)
+				F.Intrinsic.String.Format(V.Local.sCurDate,"MMMM",V.Local.sCurMM)
+				Gui.fmMain.cboMM.Text(V.Local.sCurMM.UCase)
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.SelectCase(V.Screen.fmMain!cboMM.Value.Trim)
+				F.Intrinsic.Control.Case("JANUARY")
+					V.Local.sCurMM.Set("01")
+				F.Intrinsic.Control.Case("FEBRUARY")
+					V.Local.sCurMM.Set("02")
+				F.Intrinsic.Control.Case("MARCH")
+					V.Local.sCurMM.Set("03")
+				F.Intrinsic.Control.Case("APRIL")
+					V.Local.sCurMM.Set("04")
+				F.Intrinsic.Control.Case("MAY")
+					V.Local.sCurMM.Set("05")
+				F.Intrinsic.Control.Case("JUNE")
+					V.Local.sCurMM.Set("06")
+				F.Intrinsic.Control.Case("JULY")
+					V.Local.sCurMM.Set("07")
+				F.Intrinsic.Control.Case("AUGUST")
+					V.Local.sCurMM.Set("08")
+				F.Intrinsic.Control.Case("SEPTEMBER")
+					V.Local.sCurMM.Set("09")
+				F.Intrinsic.Control.Case("OCTOBER")
+					V.Local.sCurMM.Set("10")
+				F.Intrinsic.Control.Case("NOVEMBER")
+					V.Local.sCurMM.Set("11")
+				F.Intrinsic.Control.Case("DECEMBER")
+					V.Local.sCurMM.Set("12")
+			F.Intrinsic.Control.EndSelect
+			
+			V.Local.sCurYY.Set(V.Screen.fmMain!cboYY.Value.Trim)
+			
+			F.Intrinsic.Math.Sub(V.Local.sCurYY,1,V.Local.sPrevYY)
+	
+			F.Intrinsic.String.Build("Select BEG_DATE,END_DATE from V_GL_CALENDAR where START_YEAR = '{0}' and PERIOD = '{1}'",V.Local.sCurYY.Trim,V.Local.sCurMM.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+			
+			F.Intrinsic.String.Split(V.Local.sSQL,"*!*",V.Local.sSQL)
+			V.Local.sCurBegDate.Set(V.Local.sSQL(0).PervasiveDate)
+			V.Local.sCurEndDate.Set(V.Local.sSQL(1).PervasiveDate)
+			
+			Gui.fmMain.lblBegDt.Caption(V.Local.sSQL(0))
+			Gui.fmMain.lblEndDt.Caption(V.Local.sSQL(1))
+			'Month-End.  Displays all data from 1 January to the end of the month selected
+			F.Intrinsic.Control.If(V.Screen.fmMain!chkMonthEnd.CheckedAsBoolean)
+				F.Intrinsic.String.Build("1/1/{0}",V.Local.sCurYY.Trim,V.Local.sCurBegDate)
+				Gui.fmMain.lblBegDt.Caption(V.Local.sCurBegDate)
+			F.Intrinsic.Control.EndIf
+			
+			V.Local.sSQL.Redim(0,0)
+			
+			F.Intrinsic.String.Build("Select BEG_DATE,END_DATE from V_GL_CALENDAR where START_YEAR = '{0}' and PERIOD = '{1}'",V.Local.sPrevYY.Trim,V.Local.sCurMM.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+			
+			F.Intrinsic.String.Split(V.Local.sSQL,"*!*",V.Local.sSQL)
+			V.Local.sPrevBegDate.Set(V.Local.sSQL(0))
+			V.Local.sPrevEndDate.Set(V.Local.sSQL(1))
+			
+			Gui.fmMain.lblPrevDt.Caption(V.Local.sPrevBegDate)
+			Gui.fmMain.lblPrevEndDt.Caption(V.Local.sPrevEndDate)
+			'Month-End.  Same as above for previous year
+			F.Intrinsic.Control.If(V.Screen.fmMain!chkMonthEnd.CheckedAsBoolean)
+				F.Intrinsic.String.Build("1/1/{0}",V.Local.sPrevYY.Trim,V.Local.sPrevBegDate)
+				Gui.fmMain.lblPrevDt.Caption(V.Local.sPrevBegDate)
+			F.Intrinsic.Control.EndIf
+			
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtMain.Exists)
+		F.Data.DataTable.Close("dtMain")
+	F.Intrinsic.Control.EndIf
+	
+	'Collect product lines by category
+	'BN, July 2022
+	f.Intrinsic.Control.CallSub(Create_dtPLDynamic_dtDistinctCategory)
+	
+	F.Data.DataTable.CreateFromSQL("dtMain","conts","Select RTRIM(CUSTOMER) as CUSTOMER,NAME_CUSTOMER,' ' as BuyGrp,TERRITORY as Branch,SALESPERSON from V_CUSTOMER_MASTER where NAME_CUSTOMER <> '**DO NOT USE**' Order By NAME_CUSTOMER;",True)
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtDistinctCategory.RowCount--,1)
+		'Add Columns
+		f.Intrinsic.String.Build("Div{0}",v.Local.iCnt,v.Local.sDivCol)
+		f.Intrinsic.String.Build("Cur{0}",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sCurCol)
+		f.Intrinsic.String.Build("Prev{0}",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sPrevCol)
+		f.Intrinsic.String.Build("{0}Chg",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sChgCol)
+		f.Intrinsic.String.Build("{0}Pct",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sPctCol)		
+		
+		F.Data.DataTable.AddColumn("dtMain",v.Local.sDivCol,"String","")	
+		F.Data.DataTable.AddColumn("dtMain",v.Local.sCurCol,"Long",0)
+		F.Data.DataTable.AddColumn("dtMain",v.Local.sPrevCol,"Long",0)
+		
+		f.Intrinsic.String.Build("{0} - {1}",v.Local.sCurCol,v.Local.sPrevCol,v.Local.sExp)		
+		F.Data.DataTable.AddExpressionColumn("dtMain",v.Local.sChgCol,"Long",v.Local.sExp)
+		
+		f.Intrinsic.String.Build("IIF({1} = 0,IIf({0} = 0,0,1),{2}/{1})",v.Local.sCurCol,v.Local.sPrevCol,v.Local.sChgCol,v.Local.sExp)			
+		F.Data.DataTable.AddExpressionColumn("dtMain",v.Local.sPctCol,"Float",v.Local.sExp)
+		
+		'Populate data
+		F.Intrinsic.String.Build("select RTRIM(CUSTOMER) as CUSTOMER,SUM(QTY_SHIPPED*PRICE) as AMT from V_ORDER_HIST_LINE where PRODUCT_LINE in ('{0}') and DATE_INVOICE between '{1}' and '{2}' and CREDIT_MEMO_FLAG <> 'Y' Group By CUSTOMER",v.DataTable.dtDistinctCategory(v.Local.iCnt).PlList!FieldValTrim,V.Local.sCurBegDate.PervasiveDate,V.Local.sCurEndDate.PervasiveDate,V.Local.sSQL)
+		f.Intrinsic.String.Build("dict{0}Curr",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sDictName)
+		F.Data.Dictionary.CreateFromSQL(v.Local.sDictName,"conts",V.Local.sSQL)
+		F.Data.Dictionary.SetDefaultReturn(v.Local.sDictName,0)	
+		F.Data.DataTable.FillFromDictionary("dtMain",v.Local.sDictName,"CUSTOMER",v.Local.sCurCol)		
+		F.Data.Dictionary.Close(v.Local.sDictName)
+		
+		F.Intrinsic.String.Build("select RTRIM(CUSTOMER) as CUSTOMER,SUM(QTY_SHIPPED*PRICE) as AMT from V_ORDER_HIST_LINE where PRODUCT_LINE in ('{0}') and DATE_INVOICE between '{1}' and '{2}' and CREDIT_MEMO_FLAG <> 'Y' Group By CUSTOMER",v.DataTable.dtDistinctCategory(v.Local.iCnt).PlList!FieldValTrim,V.Local.sPrevBegDate.PervasiveDate,V.Local.sPrevEndDate.PervasiveDate,V.Local.sSQL)
+		f.Intrinsic.String.Build("dict{0}Prev",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sDictName)
+		F.Data.Dictionary.CreateFromSQL(v.Local.sDictName,"conts",V.Local.sSQL)
+		F.Data.Dictionary.SetDefaultReturn(v.Local.sDictName,0)	
+		F.Data.DataTable.FillFromDictionary("dtMain",v.Local.sDictName,"CUSTOMER",v.Local.sPrevCol)		
+		F.Data.Dictionary.Close(v.Local.sDictName)					
+	
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+
+	f.Intrinsic.Control.If(v.DataTable.dtDistinctCategory.RowCount,>,0)
+		F.Data.DataTable.AddColumn("dtMain","DivTotal","String","")
+		f.Data.DataView.Create("dtDistinctCategory","vDistinct")
+		f.Data.DataView.ToString("dtDistinctCategory","vDistinct","Category",""," + Cur",v.Local.sExp)
+		f.Intrinsic.String.Build("Cur{0}",v.Local.sExp,v.Local.sExp)
+		F.Data.DataTable.AddExpressionColumn("dtMain","CurGross","Long",v.Local.sExp)
+		f.Data.DataView.ToString("dtDistinctCategory","vDistinct","Category",""," + Prev",v.Local.sExp)
+		f.Intrinsic.String.Build("Prev{0}",v.Local.sExp,v.Local.sExp)		
+		F.Data.DataTable.AddExpressionColumn("dtMain","PrevGross","Long",v.Local.sExp)
+		F.Data.DataTable.AddExpressionColumn("dtMain","GrossChg","Long","CurGross-PrevGross")
+		F.Data.DataTable.AddExpressionColumn("dtMain","GrossPct","Float","IIF(PrevGross = 0,IIf(CurGross = 0,0,1),GrossChg/PrevGross)")			
+		f.Data.DataView.Close("dtDistinctCategory","vDistinct")
+	f.Intrinsic.Control.EndIf	
+	
+	'Fill Buying Group
+	F.Data.Dictionary.CreateFromSQL("dictBuyGrp","conts","Select RTRIM(CUSTOMER) as CUSTOMER,GROUP_CUST from BUYING_GROUP UNION Select distinct RTRIM(GROUP_CUST) as CUSTOMER,GROUP_CUST from BUYING_GROUP;")
+	F.Data.Dictionary.SetDefaultReturn("dictBuyGrp","")
+	F.Data.DataTable.FillFromDictionary("dtMain","dictBuyGrp","CUSTOMER","BuyGrp")
+	F.Data.Dictionary.Close("dictBuyGrp")
+	
+	F.ODBC.Connection!conts.Close
+	
+	F.Intrinsic.Control.CallSub(GridFormat,"sDT","dtMain","sGsGc","GsGcSAHist","sGV","gvHist")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.DataBuild.End
+
+Program.Sub.Create_dtPLDynamic_dtDistinctCategory.Start
+F.Intrinsic.Control.Try
+	V.Local.iCnt.Declare
+	v.Local.sCategory.Declare
+	v.Local.sPLList.Declare
+	v.Local.sFilter.Declare
+
+	'BN, July 2022
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	f.Intrinsic.Control.If(v.DataTable.dtPLDynamic.Exists)
+		f.Data.DataTable.Close("dtPLDynamic")
+	f.Intrinsic.Control.EndIf
+	F.Data.DataTable.CreateFromSQL("dtPLDynamic","conx","Select Category,Product_Line,Color from GCG_6063_PL_CAT order by Category,Product_Line",True)
+	
+	f.Intrinsic.Control.If(v.DataTable.dtPLDynamic.RowCount,=,0)
+		f.Intrinsic.UI.Msgbox("No Category setup")
+		f.Intrinsic.Control.CallSub(Unload)
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataView.Create("dtPLDynamic","vDynamic")
+	
+	f.Intrinsic.Control.If(v.DataTable.dtDistinctCategory.Exists)
+		f.Data.DataTable.Close("dtDistinctCategory")
+	f.Intrinsic.Control.EndIf
+	F.Data.DataTable.CreateFromSQL("dtDistinctCategory","conx","Select Distinct rtrim(Category) as Category from GCG_6063_PL_CAT order by Order_no",True)	
+	f.Data.DataTable.AddColumn("dtDistinctCategory","PLList","String","")	
+	
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtDistinctCategory.RowCount--,1)
+		v.Local.sCategory.Set(v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim)
+		f.Intrinsic.String.Build("Trim(CATEGORY) = '{0}'",v.Local.sCategory.PSQLFriendly,v.Local.sFilter)
+		F.Data.DataView.SetFilter("dtPLDynamic","vDynamic",v.Local.sFilter)
+		F.Data.DataView.ToString("dtPLDynamic","vDynamic","PRODUCT_LINE","","','",V.Local.sPLList)
+		f.Data.DataTable.SetValue("dtDistinctCategory",v.Local.iCnt,"PLList",v.Local.sPLList)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+
+	f.ODBC.Connection!conx.Close
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Create_dtPLDynamic_dtDistinctCategory.End
+
+Program.Sub.EBData.Start
+F.Intrinsic.Control.Try
+	V.Local.sSteel.Declare
+	V.Local.sCoping.Declare
+	V.Local.sExtrusion.Declare
+	V.Local.sThermo.Declare
+	V.Local.sPolymer.Declare
+	V.Local.sForms.Declare
+	V.Local.sHydroblox.Declare
+	V.Local.sCurDate.Declare
+	V.Local.sCurYY.Declare
+	V.Local.sCurDD.Declare
+	V.Local.sCurMM.Declare
+	V.Local.sCurBegDate.Declare
+	V.Local.sCurEndDate.Declare
+	V.Local.sPrevBegDate.Declare
+	V.Local.sPrevEndDate.Declare
+	V.Local.sPrevYY.Declare
+	V.Local.sFiscalYY.Declare
+	V.Local.sOrders.Declare
+	V.Local.sPrevOrders.Declare
+	V.Local.sSQL.Declare
+	
+	v.Local.sCategory.Declare
+	v.Local.sPLList.Declare
+	v.Local.sFilter.Declare
+	v.Local.sDivCol.Declare
+	v.Local.sCurCol.Declare
+	v.Local.sPrevCol.Declare
+	v.Local.sChgCol.Declare
+	v.Local.sPctCol.Declare
+	v.Local.sExp.Declare
+	v.Local.sDictName.Declare
+	v.Local.iCnt.Declare
+	
+	Gui.fmMain.lblSAGetData.Visible(True)
+	
+	V.Local.sCurDate.Set(V.Ambient.Date)
+	F.Intrinsic.String.Format(V.Local.sCurDate,"YYYY",V.Local.sCurYY)
+	F.Intrinsic.String.Format(V.Local.sCurDate,"DD",V.Local.sCurDD)
+	F.Intrinsic.String.Format(V.Local.sCurDate,"MM",V.Local.sCurMM)
+	
+	F.Intrinsic.Control.If(V.Local.sCurMM,>=,10,"AND",V.Local.sCurMM,<=,12)
+		'Start of new fiscal year
+		F.Intrinsic.String.Build("10/01/{0}",V.Local.sCurYY,V.Local.sCurBegDate)
+		F.Intrinsic.String.Build("{0}/{1}/{2}",V.Local.sCurMM,V.Local.sCurDD,V.Local.sCurYY,V.Local.sCurEndDate)
+		
+		F.Intrinsic.Math.Sub(V.Local.sCurYY,1,V.Local.sPrevYY)
+		F.Intrinsic.String.Build("10/01/{0}",V.Local.sPrevYY,V.Local.sPrevBegDate)
+		F.Intrinsic.String.Build("{0}/{1}/{2}",V.Local.sCurMM,V.Local.sCurDD,V.Local.sPrevYY,V.Local.sPrevEndDate)
+		
+	F.Intrinsic.Control.Else
+		'Beyond January 1st
+		F.Intrinsic.Math.Sub(V.Local.sCurYY,1,V.Local.sPrevYY)
+		F.Intrinsic.Math.Sub(V.Local.sCurYY,2,V.Local.sFiscalYY)
+		
+		F.Intrinsic.String.Build("10/01/{0}",V.Local.sPrevYY,V.Local.sCurBegDate)
+		F.Intrinsic.String.Build("{0}/{1}/{2}",V.Local.sCurMM,V.Local.sCurDD,V.Local.sCurYY,V.Local.sCurEndDate)
+	
+		F.Intrinsic.String.Build("10/01/{0}",V.Local.sFiscalYY,V.Local.sPrevBegDate)
+		F.Intrinsic.String.Build("{0}/{1}/{2}",V.Local.sCurMM,V.Local.sCurDD,V.Local.sPrevYY,V.Local.sPrevEndDate)
+	F.Intrinsic.Control.EndIf
+	
+	Gui.fmMain.lblEBStrtDt.Caption(V.Local.sCurBegDate)
+	Gui.fmMain.lblEBEndDt.Caption(V.Local.sCurEndDate)
+	Gui.fmMain.lblEBPrevStrtDt.Caption(V.Local.sPrevBegDate)
+	Gui.fmMain.lblEBPrevEndDt.Caption(V.Local.sPrevEndDate)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtPL.Exists)
+		F.Data.DataTable.Close("dtPL")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtEB.Exists)
+		F.Data.DataTable.Close("dtEB")
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!conts.OpenCompanyConnection
+	
+	'Early Buy orders are designated with "EB" as the left 2 characters in ORDER_HEADER.USER_1
+	
+	'Current Fiscal Year
+	F.Intrinsic.String.Build("Select ORDER_NO from V_ORDER_HEADER where USER_1 like 'EB%' and DATE_ORDER between '{0}' and '{1}' union select ORDER_NO from V_ORDER_HIST_HEAD where USER_1 like 'EB%' and DATE_ORDER between '{0}' and '{1}'",V.Local.sCurBegDate.PervasiveDate,V.Local.sCurEndDate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sOrders)
+	F.Intrinsic.String.Replace(V.Local.sOrders,"#$#","','",V.Local.sOrders)
+	F.Intrinsic.String.Build("('{0}')",V.Local.sOrders,V.Local.sOrders)
+	
+	'Previous Fiscal Year
+	F.Intrinsic.String.Build("Select ORDER_NO from V_ORDER_HEADER where USER_1 like 'EB%' and DATE_ORDER between '{0}' and '{1}' union select ORDER_NO from V_ORDER_HIST_HEAD where USER_1 like 'EB%' and DATE_ORDER between '{0}' and '{1}'",V.Local.sPrevBegDate.PervasiveDate,V.Local.sPrevEndDate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sPrevOrders)
+	F.Intrinsic.String.Replace(V.Local.sPrevOrders,"#$#","','",V.Local.sPrevOrders)
+	F.Intrinsic.String.Build("('{0}')",V.Local.sPrevOrders,V.Local.sPrevOrders)	
+	
+	'Collect product lines by category
+	'BN, July 2022
+	f.Intrinsic.Control.CallSub(Create_dtPLDynamic_dtDistinctCategory)
+	
+	F.Data.DataTable.CreateFromSQL("dtEB","conts","Select RTRIM(CUSTOMER) as CUSTOMER,NAME_CUSTOMER,' ' as BuyGrp,TERRITORY as Branch,SALESPERSON from V_CUSTOMER_MASTER where NAME_CUSTOMER <> '**DO NOT USE**' Order By NAME_CUSTOMER;",True)
+	
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtDistinctCategory.RowCount--,1)
+		'Add Columns
+		f.Intrinsic.String.Build("Div{0}",v.Local.iCnt,v.Local.sDivCol)
+		f.Intrinsic.String.Build("Cur{0}",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sCurCol)
+		f.Intrinsic.String.Build("Prev{0}",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sPrevCol)
+		f.Intrinsic.String.Build("{0}Chg",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sChgCol)
+		f.Intrinsic.String.Build("{0}Pct",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sPctCol)		
+		
+		F.Data.DataTable.AddColumn("dtEB",v.Local.sDivCol,"String","")	
+		F.Data.DataTable.AddColumn("dtEB",v.Local.sCurCol,"Long",0)
+		F.Data.DataTable.AddColumn("dtEB",v.Local.sPrevCol,"Long",0)
+		
+		f.Intrinsic.String.Build("{0} - {1}",v.Local.sCurCol,v.Local.sPrevCol,v.Local.sExp)		
+		F.Data.DataTable.AddExpressionColumn("dtEB",v.Local.sChgCol,"Long",v.Local.sExp)
+		
+		f.Intrinsic.String.Build("IIF({1} = 0,IIf({0} = 0,0,1),{2}/{1})",v.Local.sCurCol,v.Local.sPrevCol,v.Local.sChgCol,v.Local.sExp)			
+		F.Data.DataTable.AddExpressionColumn("dtEB",v.Local.sPctCol,"Float",v.Local.sExp)
+		
+		'Populate data
+		'Cur
+		F.Intrinsic.String.Build("select RTRIM(CUSTOMER) as CUSTOMER,SUM(QTY_ORDERED*PRICE) as AMT from V_ORDER_LINES where PRODUCT_LINE in ('{0}') and ORDER_NO in {1} Group By CUSTOMER union all select CUSTOMER,SUM(QTY_ORDERED*PRICE) as AMT from V_ORDER_HIST_LINE where PRODUCT_LINE in ('{0}') and ORDER_NO in {1} Group By CUSTOMER",v.DataTable.dtDistinctCategory(v.Local.iCnt).PlList!FieldValTrim,V.Local.sOrders,V.Local.sSQL)		
+		f.Intrinsic.String.Build("dict{0}Curr",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sDictName)
+		F.Data.Dictionary.CreateFromSQL(v.Local.sDictName,"conts",V.Local.sSQL)
+		F.Data.Dictionary.SetDefaultReturn(v.Local.sDictName,0)	
+		F.Data.DataTable.FillFromDictionary("dtEB",v.Local.sDictName,"CUSTOMER",v.Local.sCurCol)		
+		F.Data.Dictionary.Close(v.Local.sDictName)
+		
+		F.Intrinsic.String.Build("select RTRIM(CUSTOMER) as CUSTOMER,SUM(QTY_ORDERED*PRICE) as AMT from V_ORDER_LINES where PRODUCT_LINE in ('{0}') and ORDER_NO in {1} Group By CUSTOMER union all select CUSTOMER,SUM(QTY_ORDERED*PRICE) as AMT from V_ORDER_HIST_LINE where PRODUCT_LINE in ('{0}') and ORDER_NO in {1} Group By CUSTOMER",v.DataTable.dtDistinctCategory(v.Local.iCnt).PlList!FieldValTrim,V.Local.sPrevOrders,V.Local.sSQL)		
+		f.Intrinsic.String.Build("dict{0}Prev",v.DataTable.dtDistinctCategory(v.Local.iCnt).Category!FieldValTrim,v.Local.sDictName)
+		F.Data.Dictionary.CreateFromSQL(v.Local.sDictName,"conts",V.Local.sSQL)
+		F.Data.Dictionary.SetDefaultReturn(v.Local.sDictName,0)	
+		F.Data.DataTable.FillFromDictionary("dtEB",v.Local.sDictName,"CUSTOMER",v.Local.sPrevCol)		
+		F.Data.Dictionary.Close(v.Local.sDictName)					
+	
+	f.Intrinsic.Control.Next(v.Local.iCnt)	
+
+	f.Intrinsic.Control.If(v.DataTable.dtDistinctCategory.RowCount,>,0)
+		F.Data.DataTable.AddColumn("dtEB","DivTotal","String","")
+		f.Data.DataView.Create("dtDistinctCategory","vDistinct")
+		f.Data.DataView.ToString("dtDistinctCategory","vDistinct","Category",""," + Cur",v.Local.sExp)
+		f.Intrinsic.String.Build("Cur{0}",v.Local.sExp,v.Local.sExp)
+		F.Data.DataTable.AddExpressionColumn("dtEB","CurGross","Long",v.Local.sExp)
+		f.Data.DataView.ToString("dtDistinctCategory","vDistinct","Category",""," + Prev",v.Local.sExp)
+		f.Intrinsic.String.Build("Prev{0}",v.Local.sExp,v.Local.sExp)		
+		F.Data.DataTable.AddExpressionColumn("dtEB","PrevGross","Long",v.Local.sExp)
+		F.Data.DataTable.AddExpressionColumn("dtEB","GrossChg","Long","CurGross-PrevGross")
+		F.Data.DataTable.AddExpressionColumn("dtEB","GrossPct","Float","IIF(PrevGross = 0,IIf(CurGross = 0,0,1),GrossChg/PrevGross)")			
+		f.Data.DataView.Close("dtDistinctCategory","vDistinct")
+	f.Intrinsic.Control.EndIf
+	
+	'Fill Buying Group
+	F.Data.Dictionary.CreateFromSQL("dictBuyGrp","conts","Select RTRIM(CUSTOMER) as CUSTOMER,GROUP_CUST from BUYING_GROUP UNION Select distinct RTRIM(GROUP_CUST) as CUSTOMER,GROUP_CUST from BUYING_GROUP;")
+	F.Data.Dictionary.SetDefaultReturn("dictBuyGrp","")
+	F.Data.DataTable.FillFromDictionary("dtEB","dictBuyGrp","CUSTOMER","BuyGrp")
+	F.Data.Dictionary.Close("dictBuyGrp")		
+	
+	F.ODBC.Connection!conts.Close
+	
+	F.Intrinsic.Control.CallSub(GridFormat,"sDT","dtEB","sGsGc","GsGcEarly","sGV","gvEB")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.EBData.End
+
+Program.Sub.GridFormat.Start
+F.Intrinsic.Control.Try
+V.Local.sFieldNames.Declare
+V.Local.iCNT.Declare
+V.Local.sCurDate.Declare
+V.Local.sCurYY.Declare
+V.Local.sPrevYY.Declare
+V.Local.sCurCaption.Declare
+V.Local.sPrevCaption.Declare
+V.Local.sCaption.Declare
+V.Local.sChngPct.Declare
+V.Local.sSnip.Declare
+V.Local.bChk.Declare
+V.Local.sTag.Declare
+
+v.Local.sFilter.Declare
+v.Local.sDivCol.Declare
+v.Local.sCurCol.Declare
+v.Local.sPrevCol.Declare
+v.Local.sChgCol.Declare
+v.Local.sPctCol.Declare
+v.Local.sExp.Declare
+v.Local.sDictName.Declare
+v.Local.sColor.Declare
+v.Local.sHold.Declare
+v.Local.bInStr.Declare
+
+'F.Intrinsic.String.Build("{0}-{1}-01",V.Screen.fmMain!cboYY.Value,V.Screen.fmMain!cboMM.Value,V.Local.sCurDate)
+V.Local.sCurDate.Set(V.Screen.fmMain!lblBegDt.Caption)
+F.Intrinsic.String.Format(V.Local.sCurDate,"YYYY",V.Local.sCurYY)
+
+F.Intrinsic.Math.Sub(V.Local.sCurYY,1,V.Local.sPrevYY)
+
+F.Intrinsic.String.Build("{0}{1}",V.Local.sCurYY,V.Ambient.NewLine,V.Local.sCurYY)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPrevYY,V.Ambient.NewLine,V.Local.sPrevYY)
+
+Gui.fmMain.[V.Args.sGsGc].AddGridviewFromDatatable(V.Args.sGV,V.Args.sDT)
+
+Gui.fmMain.[V.Args.sGsGc].SuspendLayout
+
+Gui.fmMain.[V.Args.sGsGc].SetGridviewProperty(V.Args.sGV,"Editable",False)
+Gui.fmMain.[V.Args.sGsGc].SetGridviewProperty(V.Args.sGV,"ReadOnly",True)
+Gui.fmMain.[V.Args.sGsGc].SetGridviewProperty(V.Args.sGV,"Enableappearanceoddrow",True)
+Gui.fmMain.[V.Args.sGsGc].SetGridviewProperty(V.Args.sGV,"AllowFilter",True)
+Gui.fmMain.[V.Args.sGsGc].SetGridviewProperty(V.Args.sGV,"ColumnPanelRowHeight",40)
+Gui.fmMain.[V.Args.sGsGc].SetGridviewProperty(V.Args.sGV,"OptionsViewColumnAutoWidth",False)
+
+F.Intrinsic.Control.If(V.Args.sDT,=,"dtMain")
+	V.Local.sFieldNames.Set(V.DataTable.dtMain.FieldNames)
+	F.Intrinsic.String.Split(V.Local.sFieldNames,"*!*",V.Local.sFieldNames)
+F.Intrinsic.Control.Else
+	V.Local.sFieldNames.Set(V.DataTable.dtEB.FieldNames)
+	F.Intrinsic.String.Split(V.Local.sFieldNames,"*!*",V.Local.sFieldNames)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.For(V.Local.iCNT,V.Local.sFieldNames.LBound,V.Local.sFieldNames.UBound,1)
+	Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),"HeaderFontBold",True)
+	Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),"HeaderWordWrap","Wrap")
+	Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),"HeaderHAlignment","Center")
+
+	'Setting header captions 
+	F.Intrinsic.String.Left(V.Local.sFieldNames(V.Local.iCNT),3,V.Local.sCurCaption)
+	F.Intrinsic.Control.If(V.Local.sCurCaption,=,"Cur")
+		F.Intrinsic.String.Replace(V.Local.sFieldNames(V.Local.iCNT),"Cur",V.Local.sCurYY,V.Local.sCaption)
+		F.Intrinsic.String.Replace(V.Local.sFieldNames(V.Local.iCNT),"Cur","Sum",V.Local.sTag)
+		Gui.fmMain.[V.Args.sGsGc].AddSummaryItem(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),V.Local.sTag,"SUM","","","C")
+	F.Intrinsic.Control.ElseIf(V.Local.sCurCaption,=,"Pre")
+		F.Intrinsic.String.Replace(V.Local.sFieldNames(V.Local.iCNT),"Prev",V.Local.sPrevYY,V.Local.sCaption)
+		F.Intrinsic.String.Replace(V.Local.sFieldNames(V.Local.iCNT),"Prev","Sum",V.Local.sTag)
+		Gui.fmMain.[V.Args.sGsGc].AddSummaryItem(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),V.Local.sTag,"SUM","","","C")
+	F.Intrinsic.Control.ElseIf(V.Local.sCurCaption,=,"Div")
+		Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),"CellBackColor",-2147483633)
+		Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),"HeaderBackColor",-2147483633)
+		Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),"MaxWidth",1)
+		V.Local.sCaption.Set(" ")
+		Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),"ShowCaption",False)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Right(V.Local.sFieldNames(V.Local.iCNT),3,V.Local.sChngPct)
+		F.Intrinsic.Control.If(V.Local.sChngPct,=,"Pct")
+			F.Intrinsic.String.Replace(V.Local.sFieldNames(V.Local.iCNT),"Pct"," %",V.Local.sCaption)
+			Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),"DisplayCustomString","#%")
+		F.Intrinsic.Control.ElseIf(V.Local.sChngPct,=,"Chg")
+			F.Intrinsic.String.Replace(V.Local.sFieldNames(V.Local.iCNT),"Chg"," Chg",V.Local.sCaption)
+			F.Intrinsic.String.Replace(V.Local.sFieldNames(V.Local.iCNT),"Chg","Sum",V.Local.sTag)
+		Gui.fmMain.[V.Args.sGsGc].AddSummaryItem(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),V.Local.sTag,"SUM","","","C")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,V.Local.sFieldNames(V.Local.iCNT),"Caption",V.Local.sCaption)
+
+F.Intrinsic.Control.Next(V.Local.iCNT)
+
+'BN, July 2022
+f.Intrinsic.Control.If(v.DataTable.dtColor.Exists)
+	f.Data.DataTable.Close("dtColor")
+f.Intrinsic.Control.EndIf
+f.ODBC.Connection!conx.OpenCompanyConnection
+F.Data.DataTable.CreateFromSQL("dtColor","conx","Select Distinct rtrim(Category) as Category,Color from GCG_6063_PL_CAT order by Category",True)	
+f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtColor.RowCount--,1)
+	v.Local.sColor.Set(v.DataTable.dtColor(v.Local.iCnt).Color!FieldValTrim)
+	f.Intrinsic.String.Build("Cur{0}",v.DataTable.dtColor(v.Local.iCnt).Category!FieldValTrim,v.Local.sCurCol)
+	f.Intrinsic.String.Build("Prev{0}",v.DataTable.dtColor(v.Local.iCnt).Category!FieldValTrim,v.Local.sPrevCol)
+	f.Intrinsic.String.Build("{0}Chg",v.DataTable.dtColor(v.Local.iCnt).Category!FieldValTrim,v.Local.sChgCol)
+	f.Intrinsic.String.Build("{0}Pct",v.DataTable.dtColor(v.Local.iCnt).Category!FieldValTrim,v.Local.sPctCol)		
+	
+	Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,v.Local.sCurCol,"HeaderBackColor",v.Local.sColor)
+	Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,v.Local.sPrevCol,"HeaderBackColor",v.Local.sColor)
+	Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,v.Local.sChgCol,"HeaderBackColor",v.Local.sColor)
+	Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,v.Local.sPctCol,"HeaderBackColor",v.Local.sColor)
+	f.Intrinsic.String.Build("*!*{0}*!*",v.Local.sColor.Trim,v.Local.sHold)
+	f.Intrinsic.String.IsInString(v.Global.sColorNeedWhiteFont,v.Local.sHold,True,v.Local.bInStr)
+	f.Intrinsic.Control.If(v.Local.bInStr)	
+		Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,v.Local.sCurCol,"HeaderForeColor","White")
+		Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,v.Local.sPrevCol,"HeaderForeColor","White")
+		Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,v.Local.sChgCol,"HeaderForeColor","White")
+		Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,v.Local.sPctCol,"HeaderForeColor","White")	
+	f.Intrinsic.Control.EndIf
+	
+
+f.Intrinsic.Control.Next(v.Local.iCnt)	
+
+'Miscellaneous
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"NAME_CUSTOMER","Fixed","Left")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"CUSTOMER","Visible","False")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"NAME_CUSTOMER","Caption","Customer")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"NAME_CUSTOMER","MinWidth",200)
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"BuyGrp","Fixed","Left")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"BuyGrp","Caption","Buying Group")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"BuyGrp","MinWidth",100)
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"BuyGrp","CellHAlignment","Center")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"SALESPERSON","Fixed","Left")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"SALESPERSON","Caption","SP")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"SALESPERSON","MinWidth",50)
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"SALESPERSON","CellHAlignment","Center")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"Branch","Fixed","Left")
+
+Gui.fmMain.[V.Args.sGsGc].SetColumnProperty(V.Args.sGV,"Branch","CellHAlignment","Center")
+
+
+
+Gui.fmMain.[V.Args.sGsGc].ResumeLayout
+
+'Gui.fmMain.[V.Args.sGsGc].Visible(True)
+
+Gui.fmMain.[V.Args.sGsGc].MainView(V.Args.sGV)
+
+Gui.fmMain.lblSAGetData.Visible(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GridFormat.End
+
+Program.Sub.tabMain_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.SelectCase(V.Screen.fmMain!tabMain.Tab)
+	F.Intrinsic.Control.Case(0)
+		Gui.fmMain.lblMM.Visible(True)
+		Gui.fmMain.cboMM.Visible(True)
+		Gui.fmMain.chkSelect.Visible(True)
+		Gui.fmMain.frmDates.Visible(True)
+		Gui.fmMain.frmEB.Visible(False)
+		Gui.fmMain..Caption("Sales History by PL Group")
+	F.Intrinsic.Control.Case(1)
+		Gui.fmMain.lblMM.Visible(False)
+		Gui.fmMain.cboMM.Visible(False)
+		Gui.fmMain.chkSelect.Visible(False)
+		Gui.fmMain.frmDates.Visible(False)
+		Gui.fmMain.frmEB.Visible(True)
+		Gui.fmMain..Caption("Early Buy Fiscal Year Comparison - Year-to-Date")
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.tabMain_Click.End
+
+Program.Sub.cmdRfrsh_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Args.MENUNAME,=,"CTX_SAHIST")
+	F.Intrinsic.Control.CallSub(DataBuild)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(EBData)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRfrsh_Click.End
+
+Program.Sub.chkSelect_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.SelectCase(V.Args.CONTROLNAME)
+	F.Intrinsic.Control.Case("CHKYREND")
+		F.Intrinsic.Control.If(V.Screen.fmMain!chkYrEnd.CheckedAsBoolean)
+			Gui.fmMain.chkMonthEnd.Value(0)
+			Gui.fmMain.chkSelect.Value(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("CHKMONTHEND")
+		F.Intrinsic.Control.If(V.Screen.fmMain!chkMonthEnd.CheckedAsBoolean)
+			Gui.fmMain.chkYrEnd.Value(0)
+			Gui.fmMain.chkSelect.Value(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("CHKSELECT")
+		F.Intrinsic.Control.If(V.Screen.fmMain!chkSelect.CheckedAsBoolean)
+			Gui.fmMain.chkMonthEnd.Value(0)
+			Gui.fmMain.chkYrEnd.Value(0)
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.chkSelect_Click.End
+
+Program.Sub.Export.Start
+F.Intrinsic.Control.Try
+V.Local.bRet.Declare
+V.Local.bRet2.Declare
+V.Local.sPath.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bRet)
+F.Automation.OOGeneral.CheckPresence(V.Local.bRet2)
+
+F.Intrinsic.Control.SelectCase(V.Args.MENUNAME)
+	F.Intrinsic.Control.Case("CTX_SAHIST")
+		F.Intrinsic.Control.If(V.Local.bRet,=,True,"OR",V.Local.bRet2,=,True)
+			F.Intrinsic.UI.ShowSaveFileDialog("","xlsx|*.xlsx",V.Local.sPath)
+			
+			F.Intrinsic.Control.If(V.Local.sPath.Trim,=,"***CANCEL***")
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.String.Split(V.Local.sPath,".",V.Local.sPath)
+
+			F.Intrinsic.String.Build("{0}.xlsx",V.Local.sPath(0),V.Local.sPath)
+			Gui.fmMain.GsGcSAHist.Export(V.Local.sPath,"xlsx")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.ShowSaveFileDialog("","csv|*.csv",V.Local.sPath)
+			
+			F.Intrinsic.Control.If(V.Local.sPath.Trim,=,"***CANCEL***")
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.String.Split(V.Local.sPath,".",V.Local.sPath)
+
+			F.Intrinsic.String.Build("{0}.csv",V.Local.sPath(0),V.Local.sPath)
+			Gui.fmMain.GsGcSAHist.Export(V.Local.sPath,"csv")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("CTX_EB")
+		F.Intrinsic.Control.If(V.Local.bRet,=,True,"OR",V.Local.bRet2,=,True)
+			F.Intrinsic.UI.ShowSaveFileDialog("","xlsx|*.xlsx",V.Local.sPath)
+			
+			F.Intrinsic.Control.If(V.Local.sPath.Trim,=,"***CANCEL***")
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.String.Split(V.Local.sPath,".",V.Local.sPath)
+
+			F.Intrinsic.String.Build("{0}.xlsx",V.Local.sPath(0),V.Local.sPath)
+			Gui.fmMain.GsGcEarly.Export(V.Local.sPath,"xlsx")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.ShowSaveFileDialog("","csv|*.csv",V.Local.sPath)
+			
+			F.Intrinsic.Control.If(V.Local.sPath.Trim,=,"***CANCEL***")
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.String.Split(V.Local.sPath,".",V.Local.sPath)
+
+			F.Intrinsic.String.Build("{0}.csv",V.Local.sPath(0),V.Local.sPath)
+			Gui.fmMain.GsGcEarly.Export(V.Local.sPath,"csv")
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Export.End
+
+'-----------------------------------Maintenance Program------------------------
+Program.Sub.cmdBrowseColor_Click.Start
+f.Intrinsic.Control.Try
+	
+	gui.StdColor..Visible(True)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseColor_Click.End
+
+Program.Sub.StdColor_UnLoad.Start
+f.Intrinsic.Control.Try
+	
+	gui.StdColor..Visible(False)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.StdColor_UnLoad.End
+
+Program.Sub.gsColor_RowCellClick.Start
+f.Intrinsic.Control.Try	
+		
+	gui.fmMX.txtColor.Text(v.DataTable.StdColor(v.Args.RowIndex).Name!FieldValString)
+	gui.StdColor..Visible(False)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsColor_RowCellClick.End
+
+Program.Sub.Load_StdColor.Start
+f.Intrinsic.Control.Try
+	v.Local.iCnt.Declare
+	V.Local.sCaption.Declare
+	v.Local.sCol.Declare
+	v.Local.sCellProperty.Declare
+	v.Local.sOrigCap.Declare	
+	v.Local.sCellFontName.Declare
+	v.Local.bBool.Declare
+	v.Local.sHold.Declare
+	v.Local.bInStr.Declare
+
+	'Standard Color
+	f.Intrinsic.Control.If(v.DataTable.StdColor.Exists)
+		f.Intrinsic.Control.close("StdColor")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromString("StdColor","AliceBlue,#F0F8FF#$#AntiqueWhite,#FAEBD7#$#Aqua,#00FFFF#$#Aquamarine,#7FFFD4#$#Azure,#F0FFFF#$#Beige,#F5F5DC#$#Bisque,#FFE4C4#$#BlanchedAlmond,#FFEBCD#$#Blue,#0000FF#$#BlueViolet,#8A2BE2#$#Brown,#A52A2A#$#BurlyWood,#DEB887#$#CadetBlue,#5F9EA0#$#Chartreuse,#7FFF00#$#Chocolate,#D2691E#$#Coral,#FF7F50#$#CornflowerBlue,#6495ED#$#Cornsilk,#FFF8DC#$#Crimson,#DC143C#$#Cyan,#00FFFF#$#DarkCyan,#008B8B#$#DarkGoldenRod,#B8860B#$#DarkGray,#A9A9A9#$#DarkGreen,#006400#$#DarkKhaki,#BDB76B#$#DarkMagenta,#8B008B#$#DarkOliveGreen,#556B2F#$#DarkOrange,#FF8C00#$#DarkOrchid,#9932CC#$#DarkRed,#8B0000#$#DarkSalmon,#E9967A#$#DarkSeaGreen,#8FBC8F#$#DarkSlateBlue,#483D8B#$#DarkSlateGray,#2F4F4F#$#DarkTurquoise,#00CED1#$#DarkViolet,#9400D3#$#DeepPink,#FF1493#$#DeepSkyBlue,#00BFFF#$#DimGray,#696969#$#DodgerBlue,#1E90FF#$#FireBrick,#B22222#$#FloralWhite,#FFFAF0#$#ForestGreen,#228B22#$#Fuchsia,#FF00FF#$#Gainsboro,#DCDCDC#$#GhostWhite,#F8F8FF#$#Gold,#FFD700#$#GoldenRod,#DAA520#$#Gray,#808080#$#Green,#008000#$#GreenYellow,#ADFF2F#$#HoneyDew,#F0FFF0#$#HotPink,#FF69B4#$#IndianRed,#CD5C5C#$#Indigo,#4B0082#$#Ivory,#FFFFF0#$#Khaki,#F0E68C#$#Lavender,#E6E6FA#$#LavenderBlush,#FFF0F5#$#LawnGreen,#7CFC00#$#LemonChiffon,#FFFACD#$#LightBlue,#ADD8E6#$#LightCoral,#F08080#$#LightCyan,#E0FFFF#$#LightGoldenRodYellow,#FAFAD2#$#LightGray,#D3D3D3#$#LightGreen,#90EE90#$#LightPink,#FFB6C1#$#LightSalmon,#FFA07A#$#LightSeaGreen,#20B2AA#$#LightSkyBlue,#87CEFA#$#LightSlateGray,#778899#$#LightSteelBlue,#B0C4DE#$#LightYellow,#FFFFE0#$#Lime,#00FF00#$#LimeGreen,#32CD32#$#Linen,#FAF0E6#$#Magenta,#FF00FF#$#Maroon,#800000#$#MediumAquaMarine,#66CDAA#$#MediumOrchid,#BA55D3#$#MediumPurple,#9370DB#$#MediumSeaGreen,#3CB371#$#MediumSlateBlue,#7B68EE#$#MediumSpringGreen,#00FA9A#$#MediumTurquoise,#48D1CC#$#MediumVioletRed,#C71585#$#MintCream,#F5FFFA#$#MistyRose,#FFE4E1#$#Moccasin,#FFE4B5#$#NavajoWhite,#FFDEAD#$#OldLace,#FDF5E6#$#Olive,#808000#$#OliveDrab,#6B8E23#$#Orange,#FFA500#$#OrangeRed,#FF4500#$#Orchid,#DA70D6#$#PaleGoldenRod,#EEE8AA#$#PaleGreen,#98FB98#$#PaleTurquoise,#AFEEEE#$#PaleVioletRed,#DB7093#$#PapayaWhip,#FFEFD5#$#PeachPuff,#FFDAB9#$#Peru,#CD853F#$#Pink,#FFC0CB#$#Plum,#DDA0DD#$#PowderBlue,#B0E0E6#$#Purple,#663399#$#Red,#FF0000#$#RosyBrown,#BC8F8F#$#RoyalBlue,#4169E1#$#SaddleBrown,#8B4513#$#Salmon,#FA8072#$#SandyBrown,#F4A460#$#SeaGreen,#2E8B57#$#SeaShell,#FFF5EE#$#Sienna,#A0522D#$#Silver,#C0C0C0#$#SkyBlue,#87CEEB#$#SlateBlue,#6A5ACD#$#SlateGray,#708090#$#Snow,#FFFAFA#$#SpringGreen,#00FF7F#$#SteelBlue,#4682B4#$#Tan,#D2B48C#$#Teal,#008080#$#Thistle,#D8BFD8#$#Tomato,#FF6347#$#Turquoise,#40E0D0#$#Violet,#EE82EE#$#Wheat,#F5DEB3#$#White,#FFFFFF#$#WhiteSmoke,#F5F5F5#$#Yellow,#FFFF00#$#YellowGreen,#9ACD32","Name*!*Code","String*!*String",",","#$#",True)
+	
+	f.Data.DataTable.AddColumn("StdColor","Select","String","Select")
+	gui.StdColor.gsColor.AddGridViewFromDatatable("GV_Color","StdColor")
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.StdColor.RowCount--,1)
+		gui.StdColor.gsColor.SetRowAppearance("GV_Color",v.Local.iCnt, "BackColor",v.DataTable.StdColor(v.Local.iCnt).Name!FieldValString) 
+		f.Intrinsic.String.Build("*!*{0}*!*",v.DataTable.StdColor(v.Local.iCnt).Name!FieldValTrim,v.Local.sHold)
+		f.Intrinsic.String.IsInString(v.Global.sColorNeedWhiteFont,v.Local.sHold,True,v.Local.bInStr)
+		f.Intrinsic.Control.If(v.Local.bInStr)
+			gui.StdColor.gsColor.SetRowAppearance("GV_Color",v.Local.iCnt, "ForeColor","White")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	gui.StdColor.gsColor.SetGridViewProperty("GV_Color","OptionsViewShowAutoFilterRow",True)
+	
+	gui.StdColor.gsColor.SetColumnProperty("GV_Color","Code","Visible","False")
+	
+	gui.StdColor.gsColor.SetColumnProperty("Gv_color","Name","AllowEdit",False)
+	gui.StdColor.gsColor.SetColumnProperty("Gv_color","Name","ReadOnly",True)
+	gui.StdColor.gsColor.SetColumnProperty("Gv_color","Code","AllowEdit",False)
+	gui.StdColor.gsColor.SetColumnProperty("Gv_color","Code","ReadOnly",True)
+	
+	gui.StdColor.gsColor.SetColumnProperty("Gv_color","Select","AllowEdit",False)
+	gui.StdColor.gsColor.SetColumnProperty("Gv_color","Select","ReadOnly",True)
+	
+	gui.StdColor.gsColor.SetColumnProperty("Gv_color","Select","MinWidth","60")
+	gui.StdColor.gsColor.SetColumnProperty("Gv_color","Select","MaxWidth","60")
+
+	gui.StdColor.gsColor.SetColumnProperty("Gv_color","Select","HeaderHAlignment","center")
+	gui.StdColor.gsColor.MainView("GV_Color")
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry	
+Program.Sub.Load_StdColor.End
+
+Program.Sub.MX.Start
+F.Intrinsic.Control.Try
+	v.Local.iCnt.Declare
+	v.Local.sHold.Declare
+	v.Local.bInStr.Declare
+
+	F.ODBC.Connection!conts.OpenCompanyConnection
+
+	
+	F.Intrinsic.Control.If(V.DataTable.dtMX.Exists)
+		F.Data.DataTable.Close("dtMX")
+	F.Intrinsic.Control.EndIf	
+	F.Data.DataTable.CreateFromSQL("dtMX","conts","Select Category,Product_Line,Color,Order_No from GCG_6063_PL_CAT order by order_no",True)
+	
+	f.Intrinsic.Control.CallSub(Populate_Combobox)	
+	
+	Gui.fmMX.GsGcMX.AddGridviewFromDatatable("gvMX","dtMX")
+	
+	Gui.fmMX.GsGcMX.SuspendLayout
+	
+	Gui.fmMX.GsGcMX.SetGridviewProperty("gvMX","MultiSelect",True)
+	Gui.fmMX.GsGcMX.SetGridviewProperty("gvMX","AllowSort",True)
+	Gui.fmMX.GsGcMX.SetGridviewProperty("gvMX","AllowFilter",True)
+	
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Order_No","AllowEdit",True)
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Order_No","ReadONly",False)
+	
+	Gui.fmMX.GsGcMX.SetGridviewProperty("gvMX","EnableAppearanceOddRow",True)
+	
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","CATEGORY","Caption","Category")
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","PRODUCT_LINE","Caption","PL")
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Order_no","Caption","Order")
+	
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","CATEGORY","HeaderFontBold",True)
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","PRODUCT_LINE","HeaderFontBold",True)
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Color","HeaderFontBold",True)
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Order_no","HeaderFontBold",True)
+	
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","CATEGORY","HeaderHAlignment","Center")
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","PRODUCT_LINE","HeaderHAlignment","Center")
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","PRODUCT_LINE","CellHAlignment","Center")
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Color","HeaderHAlignment","Center")
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Order_No","HeaderHAlignment","Center")
+	
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","CATEGORY","MinWidth",180)
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Product_Line","MinWidth",60)
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Product_Line","MaxWidth",60)
+	Gui.fmMX.GsGcMX.SetColumnProperty("gvMX","Color","MinWidth",120)
+	
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtMX.RowCount--,1)
+		gui.fmMX.GsGcMX.SetCellAppearance("gvMX",2,v.Local.iCnt,"BackColor",v.DataTable.dtMX(v.Local.iCnt).Color!FieldValTrim)
+		f.Intrinsic.String.Build("*!*{0}*!*",v.DataTable.dtMX(v.Local.iCnt).Color!FieldValTrim,v.Local.sHold)
+		f.Intrinsic.String.IsInString(v.Global.sColorNeedWhiteFont,v.Local.sHold,True,v.Local.bInStr)
+		f.Intrinsic.Control.If(v.Local.bInStr)
+			gui.StdColor.gsColor.SetRowAppearance("GV_Color",v.Local.iCnt, "ForeColor","White")
+			gui.fmMX.GsGcMX.SetCellAppearance("gvMX",2,v.Local.iCnt,"ForeColor","White")
+		f.Intrinsic.Control.EndIf		
+		
+	f.Intrinsic.Control.Next(v.Local.iCnt)	
+	
+	Gui.fmMX.GsGcMX.ResumeLayout
+	Gui.fmMX.GsGcMX.MainView("gvMX")
+	
+	Gui.fmMX..Show
+	
+	F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.MX.End
+
+Program.Sub.GsGcMX_RowCellClick.Start
+F.Intrinsic.Control.Try
+
+	Gui.fmMX.cboCat.Text(v.DataTable.dtMX(v.Args.RowIndex).Category!FieldValString)
+	Gui.fmMX.txtPL.Text(v.DataTable.dtMX(v.Args.RowIndex).Product_Line!FieldValString)
+	gui.fmMX.txtColor.Text(v.DataTable.dtMX(v.Args.RowIndex).Color!FieldValString)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGcMX_RowCellClick.End
+
+Program.Sub.Populate_Combobox.Start
+f.Intrinsic.Control.Try
+
+	gui.fmMX.cboCat.ClearItems
+	
+	f.Data.Datatable.CreateFromSQL("dtCat","conts","Select distinct Convert(0,SQL_Integer) as CatID, Category from GCG_6063_PL_CAT Order by Category",True)
+	f.Data.DataTable.SetSeries("dtCat","CatID",0,1)
+	f.Data.Dictionary.CreateFromDatatable("dictCat","dtCat","CatID","Category")
+	f.Data.Dictionary.SetDefaultReturn("dictCat","")
+	f.Intrinsic.Control.If(v.DataTable.dtCat.RowCount,>,0)
+		gui.fmMX.cboCat.AddItems("Dictionary","dictCat")
+	f.Intrinsic.Control.EndIf
+	f.Data.Dictionary.Close("dictCat")	
+	f.Data.DataTable.Close("dtCat")
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry	
+Program.Sub.Populate_Combobox.End
+
+Program.Sub.cmdBrowsePL_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sRet.Declare
+
+	f.Intrinsic.UI.CommonBrowser(130,"",v.Local.sRet)
+	f.Intrinsic.Control.If(V.Local.sRet.IsCancel,=,False)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		gui.fmMX.txtPL.Text(v.Local.sRet(0).Trim)
+	f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry	
+Program.Sub.cmdBrowsePL_Click.End
+
+Program.Sub.cmdSv_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare
+	v.Local.sCategory.Declare
+	v.Local.sProductLine.Declare
+	v.Local.sColor.Declare		
+	
+	'Validation
+	F.Intrinsic.Control.If(V.Screen.fmMX!cboCat.Value.Trim,=,"","OR",V.Screen.fmMx!txtPL.Text.Trim,=,"",v.Screen.fmMX!txtColor.Text.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Please select category, product line and color.","Invalid Input")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf	
+	
+	v.Local.sCategory.Set(V.Screen.fmMX!cboCat.Value.Trim)
+	f.Intrinsic.Control.If(v.Local.sCategory.Length,>,20)
+		f.Intrinsic.UI.Msgbox("Category must be less than 20 characters.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.String.RPad(v.Local.sCategory," ",20,v.Local.sCategory)
+	f.Intrinsic.String.rpad(V.Screen.fmMX!txtPL.Value.Trim," ",2,v.Local.sProductLine)
+	v.Local.sColor.Set(v.Screen.fmMX!txtColor.Text.Trim)
+	
+	F.ODBC.Connection!conts.OpenCompanyConnection
+	F.Intrinsic.String.Build("Select Category,Product_Line,Color from GCG_6063_PL_CAT where CATEGORY = '{0}' and PRODUCT_LINE = '{1}'",v.Local.sCategory.PSQLFriendly,v.Local.sProductLine.PSQLFriendly,V.Local.sSQL)
+	F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		'Insert
+		F.Intrinsic.String.Build("Insert into GCG_6063_PL_CAT (CATEGORY,PRODUCT_LINE,Color) values ('{0}','{1}','{2}')",v.Local.sCategory.PSQLFriendly,v.Local.sProductLine.PSQLFriendly,v.Local.sColor.PSQLFriendly,V.Local.sSQL)	
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	f.Intrinsic.Control.Else
+		'Update
+		F.Intrinsic.String.Build("Update GCG_6063_PL_CAT Set Color = '{2}' where Category = '{0}' and Product_Line =  '{1}'",v.Local.sCategory.PSQLFriendly,v.Local.sProductLine.PSQLFriendly,v.Local.sColor.PSQLFriendly,V.Local.sSQL)	
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	f.Intrinsic.Control.EndIf
+	
+	'Update
+	F.Intrinsic.String.Build("Update GCG_6063_PL_CAT Set Color = '{1}' where Category = '{0}' ",v.Local.sCategory.PSQLFriendly,v.Local.sColor.PSQLFriendly,V.Local.sSQL)	
+	F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	
+	f.ODBC.Connection!conts.Close
+	
+	Gui.fmMX.cboCat.Text("")
+	Gui.fmMX.txtPL.Text("")
+	gui.fmMX.txtColor.Text("")
+	
+	F.Intrinsic.Control.CallSub(MX)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSv_Click.End
+
+Program.Sub.cmdDel_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare
+	v.Local.sCat.Declare
+	v.Local.sPL.Declare
+
+	v.Local.sCat.Set(V.Screen.fmMX!cboCat.Value.Trim)
+	v.Local.sPL.Set(V.Screen.fmMx!txtPL.Text.Trim)
+	f.Intrinsic.String.RPad(v.Local.sCat," ",20,v.Local.sCat)
+	f.Intrinsic.String.rpad(v.Local.sPL," ",2,v.Local.sPL)
+
+	F.ODBC.Connection!conts.OpenCompanyConnection
+	
+	F.Intrinsic.String.Build("Delete GCG_6063_PL_CAT where CATEGORY = '{0}' and PRODUCT_LINE = '{1}'",v.Local.sCat.PSQLFriendly,v.Local.sPL.PSQLFriendly,V.Local.sSQL)
+	F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	
+	F.ODBC.Connection!conts.Close
+	
+	Gui.fmMX.cboCat.Text("")
+	Gui.fmMX.txtPL.Text("")
+	gui.fmMX.txtColor.Text("")
+	
+	F.Intrinsic.Control.CallSub(MX)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDel_Click.End
+
+Program.Sub.GsGcMX_CellValueChanged.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare
+	v.Local.sCat.Declare
+	v.Local.sPL.Declare
+	v.Local.sColor.Declare
+	
+	f.Intrinsic.Control.If(v.Args.Column.UCase,=,"ORDER_NO")
+		v.Local.sCat.Set(v.DataTable.dtMX(v.Args.RowIndex).Category!FieldValString)
+		v.Local.sPL.Set(v.DataTable.dtMX(v.Args.RowIndex).Product_Line!FieldValString)
+		v.Local.sColor.Set(v.DataTable.dtMX(v.Args.RowIndex).Color!FieldValString)		
+		f.Intrinsic.String.Build("Update GCG_6063_PL_CAT set Order_No = {0} where Category = '{1}' and Product_Line = '{2}' and Color = '{3}'",v.Args.Value,v.Local.sCat.PSQLFriendly,v.Local.sPL.PSQLFriendly,v.Local.sColor.PSQLFriendly,v.Local.sSQL)
+		f.ODBC.Connection!conx.OpenCompanyConnection
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.ODBC.Connection!conx.Close		
+	f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGcMX_CellValueChanged.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$bnguyen$}$20220803201523199$}$tqzwddZCkmoVRWHEL6DZymEEseDhOdziCn7F3YsdeMz5Sf02lR3HonS4FBwvEvI8p+2w8JMXQTE=
+Program.Sub.Comments.End
